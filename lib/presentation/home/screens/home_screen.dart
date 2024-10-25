@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/constants/constant.dart';
-import 'package:food_app/domain/usecases/get_cart_items.dart';
-import 'package:food_app/injection_container.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_bloc.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_event.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_state.dart';
@@ -20,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
-          margin: const EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(top: Padding_30),
           color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,10 +32,10 @@ class HomeScreen extends StatelessWidget {
               const Spacer(),
               Container(
                 padding: const EdgeInsets.only(
-                    left: 30, right: 30, top: 10, bottom: 10),
+                    left: Padding_30, right: Padding_30, top: Padding_10, bottom: Padding_10),
                 decoration: const BoxDecoration(
                   color: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: BorderRadius.all(Radius.circular(Padding_20)),
                 ),
                 child: const Text(
                   "100a Eating Rd • 24 mins",
@@ -79,14 +77,14 @@ Widget _homeWidget(bool showCart, double totalPrice, BuildContext context) {
       Visibility(
         visible: showCart,
         child: Positioned(
-          bottom: 50,
-          left: 16,
-          right: 16,
+          bottom: Padding_50,
+          left: defaultPadding,
+          right: defaultPadding,
           child: Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(defaultPadding),
             decoration: const BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
+              borderRadius: BorderRadius.all(Radius.circular(defaultPadding)),
             ),
             child: InkWell(
               onTap: () {
@@ -94,7 +92,7 @@ Widget _homeWidget(bool showCart, double totalPrice, BuildContext context) {
                   context: context,
                   isScrollControlled: true, // Fullscreen sheet
                   backgroundColor: Colors.transparent,
-                  builder: (context) => CartBottomSheet(),
+                  builder: (context) => const CartBottomSheet(),
                 ).then((value) {
                   if (value != null) {
                     context.read<CartBloc>().add(CheckCartEvent());
@@ -108,7 +106,7 @@ Widget _homeWidget(bool showCart, double totalPrice, BuildContext context) {
                     'Cart',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: defaultPadding,
                     ),
                   ),
                   Row(
@@ -117,13 +115,13 @@ Widget _homeWidget(bool showCart, double totalPrice, BuildContext context) {
                         '24 min',
                         style: TextStyle(color: Colors.white),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: Padding_10),
                       Text(
                         '\$${totalPrice.toStringAsFixed(2)}',
                         style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: fontsize_16,
                         ),
                       ),
                     ],

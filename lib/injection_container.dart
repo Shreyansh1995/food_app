@@ -1,4 +1,3 @@
-import 'package:food_app/data/data_source/local/DAO/food_dao.dart';
 import 'package:food_app/data/data_source/local/app_database.dart';
 import 'package:food_app/data/repositories/cart_repository_impl.dart';
 import 'package:food_app/data/repositories/home_repository_impl.dart';
@@ -11,7 +10,6 @@ import 'package:food_app/domain/usecases/insert_cart_item.dart';
 import 'package:food_app/domain/usecases/save_food_items.dart';
 import 'package:food_app/domain/usecases/update_cart_use_case.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_bloc.dart';
-import 'package:food_app/presentation/add_to_cart/bloc/cart_state.dart';
 import 'package:food_app/presentation/home/bloc/home_bloc.dart';
 import 'package:food_app/presentation/home/bloc/home_state.dart';
 import 'package:get_it/get_it.dart';

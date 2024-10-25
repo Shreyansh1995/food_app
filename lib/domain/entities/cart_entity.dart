@@ -8,5 +8,6 @@ class CartEntity extends Equatable{
   int? quantity;
 
   CartEntity(this.id, this.name,this.imageUrl, this.price,this.quantity);
+  @override
   List<Object> get props =>[id!,name!,imageUrl!,price!,quantity!];
 }

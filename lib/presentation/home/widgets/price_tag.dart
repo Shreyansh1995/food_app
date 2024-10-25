@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/core/constants/constant.dart';
 
 class PriceTag extends StatelessWidget {
   const PriceTag({
@@ -20,11 +20,11 @@ class PriceTag extends StatelessWidget {
       height: height,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(radius_30),
           color: Colors.black,
       ),
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: Padding_10),
+      padding: const EdgeInsets.all(Padding_12),
       child: Stack(
         alignment: Alignment.center,
         children: [

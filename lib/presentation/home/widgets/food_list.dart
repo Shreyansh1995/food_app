@@ -27,7 +27,7 @@ class FoodList extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height,
               child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: foodlist.length,
                 itemBuilder: (context, index) => Padding(
                   padding: EdgeInsets.only(
@@ -36,12 +36,12 @@ class FoodList extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () async {
-                      late FoodItemEntity _foodItemEntity;
+                      late FoodItemEntity foodItemEntity;
                       await sl<GetFoodByIdUseCase>()
                           .call(params: state.foods![index])
                           .then((result) {
                         if (result != null) {
-                          _foodItemEntity = result;
+                          foodItemEntity = result;
                         }
                       });
 
@@ -52,11 +52,11 @@ class FoodList extends StatelessWidget {
                         backgroundColor: Colors.white,
                         shape: const RoundedRectangleBorder(
                           borderRadius:
-                              BorderRadius.vertical(top: Radius.circular(25.0)),
+                              BorderRadius.vertical(top: Radius.circular(radius_25)),
                         ),
                         builder: (BuildContext context) {
                           // return buildBottomSheetContent(context);
-                          return buildFullScreenContent(context, _foodItemEntity);
+                          return buildFullScreenContent(context, foodItemEntity);
                         },
                       );
                     },

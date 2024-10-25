@@ -2,18 +2,16 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_app/domain/usecases/get_cart_items.dart';
-import 'package:food_app/domain/usecases/get_food_by_id.dart';
 import 'package:food_app/domain/usecases/insert_cart_item.dart';
 import 'package:food_app/domain/usecases/update_cart_use_case.dart';
-import 'package:food_app/injection_container.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_event.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
 
-  GetCartItemsUseCase _getCartItemsUseCase;
-  InsertCartItemsUseCase _insertCartItemsUseCase;
-  UpdateCartUseCase _updateCartUseCase;
+  final GetCartItemsUseCase _getCartItemsUseCase;
+  final InsertCartItemsUseCase _insertCartItemsUseCase;
+  final UpdateCartUseCase _updateCartUseCase;
 
   int quantity = 1;
 

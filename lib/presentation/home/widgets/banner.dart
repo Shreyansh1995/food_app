@@ -40,7 +40,7 @@ class BannerMStyle extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         title.toUpperCase(),
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: fontsize_20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                           height: 1,

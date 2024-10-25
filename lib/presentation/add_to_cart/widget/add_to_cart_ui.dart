@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_app/data/data_source/local/app_database.dart';
+import 'package:food_app/core/constants/constant.dart';
 import 'package:food_app/domain/entities/cart_entity.dart';
 import 'package:food_app/domain/entities/food_item_entity.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_bloc.dart';
@@ -36,7 +36,7 @@ Widget addtocartUi(
     expand: false,
     builder: (BuildContext context, ScrollController scrollController) {
       return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: defaultPadding, vertical: Padding_24),
         child: SingleChildScrollView(
           controller: scrollController,
           child: Column(
@@ -44,18 +44,18 @@ Widget addtocartUi(
             children: [
               Center(
                 child: Container(
-                  width: 50,
-                  height: 5,
+                  width: Padding_50,
+                  height: height_5,
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(Padding_10),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: height_16),
               Center(
                 child: Container(
-                  margin: const EdgeInsets.only(left: 30, right: 30),
+                  margin: const EdgeInsets.only(left: Padding_30, right: Padding_30),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(120)),
@@ -84,21 +84,21 @@ Widget addtocartUi(
               Text(
                 foodItemEntity.name!,
                 style: const TextStyle(
-                  fontSize: 24,
+                  fontSize: height_24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: height_8),
 
               // Description
               Text(
                 'Famous Hawaiian dish. Rice pillow with tender chicken breast, mushrooms, lettuce, cherry tomatoes, seaweed, and corn, with unagi sauce.',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: fontsize_16,
                   color: Colors.grey[700],
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: height_24),
 
               // Nutritional Info
               Row(
@@ -111,7 +111,7 @@ Widget addtocartUi(
                   _buildNutritionInfo('65', 'carbs'),
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: height_24),
 
               const Divider(),
 
@@ -123,7 +123,7 @@ Widget addtocartUi(
               ),
               const Divider(),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: height_24),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,7 +138,7 @@ Widget addtocartUi(
                       ),
                       Text(
                         quantity.toString(),
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: fontsize_18),
                       ),
                       IconButton(
                         onPressed: () {
@@ -153,12 +153,12 @@ Widget addtocartUi(
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 12,
+                        horizontal: Padding_24,
+                        vertical: Padding_12,
                       ),
                       backgroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(Padding_12),
                       ),
                     ),
                     onPressed: () {
@@ -174,20 +174,20 @@ Widget addtocartUi(
                       children: [
                         const Text(
                           'Add to cart',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(fontSize: fontsize_16, color: Colors.white),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: fontsize_16),
                         Text(
                           '\$${foodItemEntity.price}',
                           style: const TextStyle(
-                              fontSize: 16, color: Colors.white),
+                              fontSize: fontsize_16, color: Colors.white),
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: height_16),
             ],
           ),
         ),
@@ -202,14 +202,14 @@ Widget _buildNutritionInfo(String value, String label) {
       Text(
         value,
         style: const TextStyle(
-          fontSize: 16,
+          fontSize: fontsize_16,
           fontWeight: FontWeight.bold,
         ),
       ),
       Text(
         label,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: fontsize_14,
           color: Colors.grey[600],
         ),
       ),

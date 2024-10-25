@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:food_app/domain/entities/cart_entity.dart';
-import 'package:food_app/domain/entities/food_item_entity.dart';
 
 abstract class CartEvent extends Equatable {
   @override

@@ -1,4 +1,3 @@
-import 'package:food_app/core/resources/data_state.dart';
 import 'package:food_app/data/data_source/local/app_database.dart';
 import 'package:food_app/data/models/food_item_model.dart';
 import 'package:food_app/domain/entities/food_item_entity.dart';

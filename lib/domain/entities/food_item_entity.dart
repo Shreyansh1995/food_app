@@ -6,7 +6,7 @@ class FoodItemEntity extends Equatable{
   final String? imageUrl;
   final double? price;
 
-  FoodItemEntity({
+  const FoodItemEntity({
     required this.id,
     required this.name,
     required this.imageUrl,

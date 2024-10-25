@@ -8,10 +8,10 @@ import 'package:food_app/presentation/home/bloc/home_event.dart';
 import 'package:food_app/presentation/home/bloc/home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  GetFoodItemsUseCase _getFoodItemsUseCase;
-  SaveFoodItemsUseCase _saveFoodItemsUseCase;
+  final GetFoodItemsUseCase _getFoodItemsUseCase;
+  final SaveFoodItemsUseCase _saveFoodItemsUseCase;
 
-  HomeBloc(this._getFoodItemsUseCase,this._saveFoodItemsUseCase) : super(FoodInitialState()) {
+  HomeBloc(this._getFoodItemsUseCase,this._saveFoodItemsUseCase) : super(const FoodInitialState()) {
     on<SaveFood>(onSaveFood);
     on<GetFood>(onGetFood);
   }

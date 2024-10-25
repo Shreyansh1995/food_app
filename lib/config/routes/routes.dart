@@ -8,14 +8,14 @@ class AppRoutes {
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return _materialRoute(HomeScreen());
+        return _materialRoute(const HomeScreen());
 
      /* case '/ArticleDetails':
         return _materialRoute(ArticleDetailsView(article: settings.arguments as ArticleEntity));*/
 
         
       default:
-        return _materialRoute( HomeScreen());
+        return _materialRoute( const HomeScreen());
     }
   }
 

@@ -18,7 +18,7 @@ class OffersCarouselAndCategories extends StatelessWidget {
             margin: const EdgeInsets.all(20),
             child: const Text(
               "Hits of the week",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: fontsize_22, fontWeight: FontWeight.w700),
             )),
         const OffersCarousel(),
         const SizedBox(height: defaultPadding / 2),

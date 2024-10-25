@@ -7,6 +7,7 @@ class GetCartItemsUseCase extends UseCase<List<CartEntity>,void>{
 
   GetCartItemsUseCase(this.repository);
 
+  @override
   Future<List<CartEntity>> call({void params}) async {
     return await repository.getAllCartItems();
   }

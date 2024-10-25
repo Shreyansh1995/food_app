@@ -1,8 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:food_app/core/common/skeleton.dart';
 import 'package:food_app/core/constants/constant.dart';
-import 'package:food_app/presentation/home/widgets/network_image_with_loader.dart';
 
 class FoodCard extends StatelessWidget {
   const FoodCard({
@@ -20,21 +17,21 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(Padding_16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
          // NetworkImageWithLoader(image, radius: 0),
           SizedBox(
-            height: 50,
-              width: 50,
+            height: height_50,
+              width: width_50,
               child: CircleAvatar(
-                radius: 30.0,
+                radius: radius_30,
                 backgroundImage:
                 NetworkImage(image),
                 backgroundColor: Colors.transparent,
               )),
-          const SizedBox(width: 16),
+          const SizedBox(width: height_16),
 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,35 +39,35 @@ class FoodCard extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: fontsize_16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: height_8),
 
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: height_8, vertical: height_4),
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(Padding_12),
                     ),
                     child: Text(
                       '\$$price',
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: fontsize_16,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: height_16),
 
 
                   Text(
                     '325 Kcal',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: fontsize_14,
                       color: Colors.grey[600],
                     ),
                   ),

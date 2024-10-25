@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_app/core/constants/constant.dart';
 import 'package:food_app/domain/entities/cart_entity.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_bloc.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_event.dart';
 import 'package:food_app/presentation/add_to_cart/bloc/cart_state.dart';
 
 class CartBottomSheet extends StatelessWidget {
+  const CartBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CartBloc, CartState>(
@@ -32,7 +35,7 @@ class CartBottomSheet extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(Padding_16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +43,8 @@ class CartBottomSheet extends StatelessWidget {
               Center(
                 child: Container(
                   width: 50,
-                  height: 5,
-                  margin: const EdgeInsets.only(bottom: 16),
+                  height: height_5,
+                  margin: const EdgeInsets.only(bottom: Padding_16),
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(2.5),
@@ -50,9 +53,9 @@ class CartBottomSheet extends StatelessWidget {
               ),
               const Text(
                 'We will deliver in 24 minutes to the address:',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontsize_16),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: height_8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -71,7 +74,7 @@ class CartBottomSheet extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final item = cartItems[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: Padding_8),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -80,13 +83,13 @@ class CartBottomSheet extends StatelessWidget {
                             item.imageUrl!, // Replace with the actual image URL
                           ),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: height_16),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(item.name!,
-                                  style: const TextStyle(fontSize: 16)),
+                                  style: const TextStyle(fontSize: fontsize_16)),
                               const SizedBox(height: 4),
                               Row(
                                 children: [
@@ -124,7 +127,7 @@ class CartBottomSheet extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Cutlery', style: TextStyle(fontSize: 16)),
+                  const Text('Cutlery', style: TextStyle(fontSize: fontsize_16)),
                   Row(
                     children: [
                       IconButton(
@@ -145,7 +148,7 @@ class CartBottomSheet extends StatelessWidget {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Delivery', style: TextStyle(fontSize: 16)),
+                  Text('Delivery', style: TextStyle(fontSize: fontsize_16)),
                   Text('\$0.00'),
                 ],
               ),
@@ -154,19 +157,19 @@ class CartBottomSheet extends StatelessWidget {
                 style: TextStyle(color: Colors.grey),
               ),
               const Divider(),
-              const Text('Payment method', style: TextStyle(fontSize: 16)),
+              const Text('Payment method', style: TextStyle(fontSize: fontsize_16)),
               const ListTile(
                 leading: Icon(Icons.payment), // Example icon for Apple Pay
                 title: Text('Apple Pay'),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               const Divider(),
-              const SizedBox(height: 16),
+              const SizedBox(height: height_16),
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(Padding_16),
                 decoration: const BoxDecoration(
                   color: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  borderRadius: BorderRadius.all(Radius.circular(Padding_16)),
                 ),
                 child: InkWell(
                   onTap: () {
@@ -174,7 +177,7 @@ class CartBottomSheet extends StatelessWidget {
                       context: context,
                       isScrollControlled: true, // Fullscreen sheet
                       backgroundColor: Colors.transparent,
-                      builder: (context) => CartBottomSheet(),
+                      builder: (context) => const CartBottomSheet(),
                     );
                   },
                   child: Row(
@@ -184,7 +187,7 @@ class CartBottomSheet extends StatelessWidget {
                         'Cart',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: fontsize_16,
                         ),
                       ),
                       Row(
@@ -193,13 +196,13 @@ class CartBottomSheet extends StatelessWidget {
                             '24 min',
                             style: TextStyle(color: Colors.white),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: Padding_10),
                           Text(
                             '\$${totalPrice.toStringAsFixed(2)}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: fontsize_16,
                             ),
                           ),
                         ],

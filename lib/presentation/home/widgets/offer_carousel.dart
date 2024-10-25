@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_app/core/constants/constant.dart';
 import 'package:food_app/presentation/home/bloc/home_bloc.dart';
 import 'package:food_app/presentation/home/bloc/home_state.dart';
 import 'package:food_app/presentation/home/widgets/banner.dart';
@@ -70,7 +69,7 @@ class _OffersCarouselState extends State<OffersCarousel> {
                   itemBuilder: (context, index) {
                     return BannerMStyle(
                         title: state.foods![index].name!,
-                        press: () => null,
+                        press: () {},
                         image: state.foods![index].imageUrl!,
                         price: state.foods![index].price!);
                    // return offers[index];
@@ -80,7 +79,7 @@ class _OffersCarouselState extends State<OffersCarousel> {
             ),
           );
         }  else if (state is FoodInitialState) {
-          return Center(child: const CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
         return Container();
       },
