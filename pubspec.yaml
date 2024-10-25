@@ -21,7 +21,7 @@ dependencies:
   equatable: ^2.0.5
   get_it: ^8.0.0
   cached_network_image: ^3.4.1
-  intl: ^0.18.1
+  #intl: ^0.18.1
   ionicons: ^0.2.2
   flutter_svg: ^2.0.10+1
 
